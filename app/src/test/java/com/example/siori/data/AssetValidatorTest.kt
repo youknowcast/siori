@@ -74,4 +74,57 @@ class AssetValidatorTest {
         val problems = AssetValidator(source).validate()
         assertEquals(emptyList<String>(), problems)
     }
+
+    @Test
+    fun detectsSchemaVersionMismatch() {
+        val source = TestAssetTextSource(
+            mapOf(
+                "catalog.json" to """{"schemaVersion":1,"works":[{"id":"w","title":"a","author":"b"}]}""",
+                "works/w/characters.json" to """{"schemaVersion":2,"workId":"w","characters":[]}""",
+                "works/w/relations.mmd" to "flowchart TD",
+            )
+        )
+        val problems = AssetValidator(source).validate()
+        assertTrue(problems.any { it.contains("schemaVersion mismatch") })
+    }
+
+    @Test
+    fun detectsWorkIdMismatch() {
+        val source = TestAssetTextSource(
+            mapOf(
+                "catalog.json" to """{"schemaVersion":1,"works":[{"id":"w","title":"a","author":"b"}]}""",
+                "works/w/characters.json" to """{"schemaVersion":1,"workId":"other","characters":[]}""",
+                "works/w/relations.mmd" to "flowchart TD",
+            )
+        )
+        val problems = AssetValidator(source).validate()
+        assertTrue(problems.any { it.contains("workId mismatch") })
+    }
+
+    @Test
+    fun detectsOrphanWorkDirectory() {
+        val source = TestAssetTextSource(
+            mapOf(
+                "catalog.json" to """{"schemaVersion":1,"works":[{"id":"w","title":"a","author":"b"}]}""",
+                "works/w/characters.json" to """{"schemaVersion":1,"workId":"w","characters":[]}""",
+                "works/w/relations.mmd" to "flowchart TD",
+                "works/stray/characters.json" to """{"schemaVersion":1,"workId":"stray","characters":[]}""",
+                "works/stray/relations.mmd" to "flowchart TD",
+            )
+        )
+        val problems = AssetValidator(source).validate()
+        assertTrue(problems.any { it.contains("orphan work directory") })
+    }
+
+    @Test
+    fun detectsMissingRelationsFile() {
+        val source = TestAssetTextSource(
+            mapOf(
+                "catalog.json" to """{"schemaVersion":1,"works":[{"id":"w","title":"a","author":"b"}]}""",
+                "works/w/characters.json" to """{"schemaVersion":1,"workId":"w","characters":[]}""",
+            )
+        )
+        val problems = AssetValidator(source).validate()
+        assertTrue(problems.any { it.contains("missing relations.mmd") })
+    }
 }
