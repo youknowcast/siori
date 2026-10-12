@@ -10,10 +10,16 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.siori.data.SioriRepository
+import com.example.siori.ui.characters.CharacterListScreen
+import com.example.siori.ui.characters.CharacterListViewModel
+import com.example.siori.ui.relations.RelationsScreen
+import com.example.siori.ui.relations.RelationsViewModel
 import com.example.siori.ui.works.WorkListScreen
 import com.example.siori.ui.works.WorkListViewModel
 
@@ -33,6 +39,28 @@ fun SioriApp(repository: SioriRepository) {
                         modifier = Modifier.padding(padding),
                     )
                 }
+            }
+            composable(
+                route = "works/{workId}/characters",
+                arguments = listOf(navArgument("workId") { type = NavType.StringType }),
+            ) { entry ->
+                val workId = entry.arguments?.getString("workId").orEmpty()
+                CharacterListScreen(
+                    workId = workId,
+                    onOpenRelations = { navController.navigate("works/$workId/relations") },
+                    viewModel = viewModel { CharacterListViewModel(repository, workId) },
+                )
+            }
+            composable(
+                route = "works/{workId}/relations",
+                arguments = listOf(navArgument("workId") { type = NavType.StringType }),
+            ) { entry ->
+                val workId = entry.arguments?.getString("workId").orEmpty()
+                RelationsScreen(
+                    workId = workId,
+                    onBackToCharacters = { navController.popBackStack() },
+                    viewModel = viewModel { RelationsViewModel(repository, workId) },
+                )
             }
         }
     }
