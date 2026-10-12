@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; }
+    #diagram { padding: 16px; }
+    #diagram svg { max-width: none !important; height: auto; }
+  </style>
+  <script src="mermaid.min.js"></script>
+</head>
+<body>
+  <div id="diagram"></div>
+  <script>
+    mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'default' });
+    window.renderDiagram = function (text) {
+      var el = document.getElementById('diagram');
+      el.innerHTML = '';
+      var id = 'd' + Date.now();
+      mermaid.render(id, text)
+        .then(function (res) { el.innerHTML = res.svg; })
+        .catch(function (e) {
+          el.innerHTML = '<pre style="color:#b00020;white-space:pre-wrap;font-size:14px">' + String(e) + '</pre>';
+        });
+    };
+  </script>
+</body>
+</html>
