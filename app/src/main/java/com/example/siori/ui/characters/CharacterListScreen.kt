@@ -25,11 +25,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.siori.data.Character
+import com.example.siori.ui.ErrorContent
 import com.example.siori.ui.UiState
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -65,10 +65,9 @@ fun CharacterListScreen(
             )
             when (val s = state) {
                 is UiState.Loading -> CircularProgressIndicator(Modifier.padding(32.dp))
-                is UiState.Error -> Text(
-                    text = s.message,
-                    color = MaterialTheme.colorScheme.error,
-                    modifier = Modifier.padding(16.dp),
+                is UiState.Error -> ErrorContent(
+                    message = s.message,
+                    onRetry = viewModel::load,
                 )
                 is UiState.Success -> {
                     if (filtered.isEmpty()) {

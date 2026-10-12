@@ -1,5 +1,6 @@
 package com.example.siori.ui
 
+import android.net.Uri
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -33,7 +34,7 @@ fun SioriApp(repository: SioriRepository) {
                 Scaffold(topBar = { TopAppBar(title = { Text("しおり") }) }) { padding ->
                     WorkListScreen(
                         onWorkClick = { workId ->
-                            navController.navigate("works/$workId/characters")
+                            navController.navigate("works/${Uri.encode(workId)}/characters")
                         },
                         viewModel = viewModel { WorkListViewModel(repository) },
                         modifier = Modifier.padding(padding),
@@ -47,7 +48,7 @@ fun SioriApp(repository: SioriRepository) {
                 val workId = entry.arguments?.getString("workId").orEmpty()
                 CharacterListScreen(
                     workId = workId,
-                    onOpenRelations = { navController.navigate("works/$workId/relations") },
+                    onOpenRelations = { navController.navigate("works/${Uri.encode(workId)}/relations") },
                     viewModel = viewModel { CharacterListViewModel(repository, workId) },
                 )
             }

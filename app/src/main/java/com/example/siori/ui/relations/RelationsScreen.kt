@@ -5,12 +5,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -20,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.siori.ui.ErrorContent
 import com.example.siori.ui.UiState
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -45,10 +44,10 @@ fun RelationsScreen(
         Box(modifier = Modifier.fillMaxSize().padding(padding)) {
             when (val s = state) {
                 is UiState.Loading -> CircularProgressIndicator(Modifier.align(Alignment.Center))
-                is UiState.Error -> Text(
-                    text = s.message,
-                    color = MaterialTheme.colorScheme.error,
-                    modifier = Modifier.align(Alignment.Center).padding(16.dp),
+                is UiState.Error -> ErrorContent(
+                    message = s.message,
+                    onRetry = viewModel::load,
+                    modifier = Modifier.align(Alignment.Center),
                 )
                 is UiState.Success -> MermaidDiagram(
                     diagram = s.data,

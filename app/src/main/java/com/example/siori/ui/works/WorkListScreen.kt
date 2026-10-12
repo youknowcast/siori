@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.siori.data.Work
+import com.example.siori.ui.ErrorContent
 import com.example.siori.ui.UiState
 
 @Composable
@@ -35,10 +36,9 @@ fun WorkListScreen(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) { CircularProgressIndicator(Modifier.padding(32.dp)) }
 
-            is UiState.Error -> Text(
-                text = s.message,
-                color = MaterialTheme.colorScheme.error,
-                modifier = Modifier.padding(16.dp),
+            is UiState.Error -> ErrorContent(
+                message = s.message,
+                onRetry = viewModel::load,
             )
 
             is UiState.Success -> LazyColumn(modifier = Modifier.fillMaxSize()) {

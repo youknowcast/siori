@@ -15,14 +15,23 @@
   <script>
     mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'default' });
     window.renderDiagram = function (text) {
+      var lastText = text;
       var el = document.getElementById('diagram');
-      el.innerHTML = '';
-      var id = 'd' + Date.now();
-      mermaid.render(id, text)
-        .then(function (res) { el.innerHTML = res.svg; })
-        .catch(function (e) {
-          el.innerHTML = '<pre style="color:#b00020;white-space:pre-wrap;font-size:14px">' + String(e) + '</pre>';
-        });
+      function draw() {
+        el.innerHTML = '';
+        var id = 'd' + Date.now();
+        mermaid.render(id, lastText)
+          .then(function (res) { el.innerHTML = res.svg; })
+          .catch(function (e) {
+            el.innerHTML = '<pre style="color:#b00020;white-space:pre-wrap;font-size:14px">' + String(e) + '</pre>';
+            var retry = document.createElement('button');
+            retry.textContent = '再描画';
+            retry.style.marginTop = '12px';
+            retry.addEventListener('click', draw);
+            el.appendChild(retry);
+          });
+      }
+      draw();
     };
   </script>
 </body>
