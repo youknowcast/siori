@@ -58,6 +58,7 @@ fun MermaidDiagram(diagram: String, modifier: Modifier = Modifier) {
                 webView.evaluateJavascript(renderCall(diagram), null)
             }
         },
+        onRelease = { it.destroy() },
     )
 }
 
