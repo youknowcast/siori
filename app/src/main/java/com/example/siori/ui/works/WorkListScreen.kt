@@ -1,6 +1,7 @@
 package com.example.siori.ui.works
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,24 +25,27 @@ import com.example.siori.ui.UiState
 fun WorkListScreen(
     onWorkClick: (String) -> Unit,
     viewModel: WorkListViewModel,
+    modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    when (val s = state) {
-        is UiState.Loading -> Column(
-            modifier = Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) { CircularProgressIndicator(Modifier.padding(32.dp)) }
+    Box(modifier = modifier.fillMaxSize()) {
+        when (val s = state) {
+            is UiState.Loading -> Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) { CircularProgressIndicator(Modifier.padding(32.dp)) }
 
-        is UiState.Error -> Text(
-            text = s.message,
-            color = MaterialTheme.colorScheme.error,
-            modifier = Modifier.padding(16.dp),
-        )
+            is UiState.Error -> Text(
+                text = s.message,
+                color = MaterialTheme.colorScheme.error,
+                modifier = Modifier.padding(16.dp),
+            )
 
-        is UiState.Success -> LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(s.data, key = { it.id }) { work ->
-                WorkRow(work = work, onClick = { onWorkClick(work.id) })
-                HorizontalDivider()
+            is UiState.Success -> LazyColumn(modifier = Modifier.fillMaxSize()) {
+                items(s.data, key = { it.id }) { work ->
+                    WorkRow(work = work, onClick = { onWorkClick(work.id) })
+                    HorizontalDivider()
+                }
             }
         }
     }
