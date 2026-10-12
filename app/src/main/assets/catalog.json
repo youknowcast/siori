@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "works": [
+    { "id": "sample-novel", "title": "サンプル小説", "author": "テスト著者" }
+  ]
+}

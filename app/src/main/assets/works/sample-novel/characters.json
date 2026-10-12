@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "workId": "sample-novel",
+  "characters": [
+    { "id": "alice", "name": "アリス", "aliases": ["アリス嬢"], "description": "港町で暮らす主人公。" },
+    { "id": "bob", "name": "ボブ", "aliases": [], "description": "アリスの父。医師。" },
+    { "id": "carol", "name": "キャロル", "aliases": ["キャロル夫人"], "description": "ボブの妹。船員。" }
+  ]
+}
