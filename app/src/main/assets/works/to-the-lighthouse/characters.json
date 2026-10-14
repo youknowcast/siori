@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "workId": "to-the-lighthouse",
+  "characters": [
+    { "id": "ramsayMrs", "name": "ラムジー夫人", "aliases": [], "description": "ラムジー家の中心。八人の子の母。美しく思いやり深く、別荘を訪れる家族や客を自然にまとめ、その場をあたたかなものにする。" },
+    { "id": "ramsayMr", "name": "ラムジー氏", "aliases": ["ラムジー教授"], "description": "哲学者。鋭い知性と名声をもつが気分の波が激しく、家族や客に絶えず同調と称賛を求め、ときには尊大にふるまう。" },
+    { "id": "james", "name": "ジェイムズ", "aliases": [], "description": "末息子。母にいちばん甘え、灯台行きを心待ちにする感受性の強い少年。" },
+    { "id": "cam", "name": "キャム", "aliases": ["カミラ"], "description": "娘。やんちゃで自由な少女。成長するにつれ、夢見がちになる。" },
+    { "id": "prue", "name": "プロウ", "aliases": ["プルー"], "description": "長女。母に似た美しく落ち着いた娘。" },
+    { "id": "andrew", "name": "アンドリュー", "aliases": ["アンドルー"], "description": "息子。無邪気で豪快な少年。" },
+    { "id": "nancy", "name": "ナンシー", "aliases": [], "description": "娘。自然を好み、ひとりで過ごすことを厭わない少女。" },
+    { "id": "jasper", "name": "ジャスパー", "aliases": [], "description": "息子。鳥撃ちを好む男の子。" },
+    { "id": "roger", "name": "ロジャー", "aliases": [], "description": "息子。ジャスパーと行動をともにする男の子。" },
+    { "id": "rose", "name": "ローズ", "aliases": [], "description": "末娘。装飾を好む幼い娘。" },
+    { "id": "lily", "name": "リリー・ブリスコウ", "aliases": ["リリー", "ブリスコウ嬢"], "description": "独身の画家。ラムジー夫人を描こうとするが構図が定まらない。結婚を急かされつつ、絵を描くことに生きる意味を求める。" },
+    { "id": "bankes", "name": "ウィリアム・バンクス", "aliases": ["バンクス氏"], "description": "植物学者。ラムジー夫妻の旧友で、穏やかな独身の老人。リリーと親しく語り合う。" },
+    { "id": "tansley", "name": "チャールズ・タンズリー", "aliases": ["タンズリー"], "description": "ラムジー氏の弟子。貧しい出ながら学問に励む若者。不器用で辛辣、『女には絵も小説も書けない』と公言する。" },
+    { "id": "carmichael", "name": "オーガスタス・カーマイケル", "aliases": ["カーマイケル"], "description": "老いた詩人。別荘の滞在客。日陰で居眠りがちだが、独自の世界をもち、いつも静かに居合わせている。" },
+    { "id": "paul", "name": "ポール・レイリー", "aliases": ["レイリー"], "description": "若い客。この夏、ラムジー夫人の後押しもありミンタに求婚し婚約する。" },
+    { "id": "minta", "name": "ミンタ・ドイル", "aliases": ["ミンタ"], "description": "若い女性客。活発だがどこか心細いところがあり、ポールと婚約する。" }
+  ]
+}
