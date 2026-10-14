@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workId": "odyssey",
+  "characters": [
+    { "id": "odysseus", "name": "オデュッセウス", "aliases": ["ユリシーズ", "ウリクセス"], "description": "イタケーの王。トロイア戦争の終結後、故郷への帰路につく。知略と忍耐にすぐれた英雄で、旅の間も帰国を願い続ける。" },
+    { "id": "penelope", "name": "ペーネロペー", "aliases": ["ペネロペ", "ペネロペイア"], "description": "オデュッセウスの妻。夫の不在の二十年、イタケーで家を守り、言い寄る求婚者たちを巧みに退ける。" },
+    { "id": "telemachus", "name": "テーレマコス", "aliases": ["テレマコス"], "description": "オデュッセウスとペーネロペーの子。父の消息を求めてピュロスとスパルタへ旅に出る。" },
+    { "id": "laertes", "name": "ラーエルテース", "aliases": ["ラエルテス"], "description": "オデュッセウスの老いた父。屋敷を離れ、農園で暮らしている。" },
+    { "id": "eurycleia", "name": "エウリュクレイア", "aliases": ["エウリュクレア"], "description": "オデュッセウスとテーレマコスを育てた老いた乳母。一家に忠実で、屋敷の事情に通じている。" },
+    { "id": "eumaeus", "name": "エウマイオス", "aliases": ["エウメーオス"], "description": "オデュッセウスの豚飼い。忠実で、訪れた旅人をもてなす。" },
+    { "id": "antinous", "name": "アンティノオス", "aliases": ["アンティノス"], "description": "求婚者の頭目。傲慢で横暴、オデュッセウス家の財産を食い荒らす。" },
+    { "id": "eurymachus", "name": "エウリュマコス", "aliases": ["エウリュマクス"], "description": "求婚者の一人。弁の立つ美男で、アンティノオスとともに屋敷を占拠する。" },
+    { "id": "athena", "name": "アテーナー", "aliases": ["アテナ", "アテーネー"], "description": "知恵と技芸の女神。ゼウスの娘で、オデュッセウスとテーレマコスを守り導く。" },
+    { "id": "poseidon", "name": "ポセイドーン", "aliases": ["ポセイドン"], "description": "海の神。オデュッセウスを憎み、帰路に嵐と難破をもたらす。" },
+    { "id": "zeus", "name": "ゼウス", "aliases": [], "description": "神々の王。オリュンポスで帰還の議を裁き、旅人の守護神でもある。" },
+    { "id": "hermes", "name": "ヘルメース", "aliases": ["ヘルメス"], "description": "神々の伝令。ゼウスの命を運び、オデュッセウスを助ける。" },
+    { "id": "helios", "name": "ヘーリオス", "aliases": ["ヘリオス"], "description": "太陽神。その家畜をめぐって、オデュッセウスの一行の運命に関わる。" },
+    { "id": "calypso", "name": "カリュプソー", "aliases": ["カリュプソ"], "description": "オギュギアー島の女神。漂着したオデュッセウスを長く島にとどめ、不死を約束する。" },
+    { "id": "circe", "name": "キルケー", "aliases": ["キルケ"], "description": "アイアイエー島の魔女。魔術でオデュッセウスの仲間を豚に変える。" },
+    { "id": "polyphemus", "name": "ポリュペーモス", "aliases": ["ポリュペモス", "キュクロプス"], "description": "一つ目の巨人キュクロープス。ポセイドーンの子。オデュッセウスと仲間を洞窟に閉じ込める。" },
+    { "id": "aeolus", "name": "アイオロス", "aliases": [], "description": "風を治める王。オデュッセウスに風袋を授ける。" },
+    { "id": "tiresias", "name": "テイレシアース", "aliases": ["テイレシアス"], "description": "テーバイの盲いた予言者。冥府でオデュッセウスに帰路を説く。" },
+    { "id": "alcinous", "name": "アルキノオス", "aliases": ["アルキノス"], "description": "パイアーケス人の王。漂着したオデュッセウスをもてなし、帰国を助ける。" },
+    { "id": "arete", "name": "アレーテー", "aliases": ["アレテー"], "description": "パイアーケス人の王妃。アルキノオスの妻で、ナウシカアーの母。" },
+    { "id": "nausicaa", "name": "ナウシカアー", "aliases": ["ナウシカア"], "description": "パイアーケス人の王女。浜辺でオデュッセウスを見つけ、両親のもとへ導く。" },
+    { "id": "menelaus", "name": "メネラーオス", "aliases": ["メネラオス"], "description": "スパルタの王。ヘレネーの夫。訪れたテーレマコスにオデュッセウスの消息を語る。" },
+    { "id": "helen", "name": "ヘレネー", "aliases": ["ヘレネ"], "description": "スパルタの王妃。その略奪がトロイア戦争の発端となった。" },
+    { "id": "nestor", "name": "ネストール", "aliases": ["ネストル"], "description": "ピュロスの老王。トロイア戦争の生き残りで、テーレマコスを歓待する。" },
+    { "id": "agamemnon", "name": "アガメムノーン", "aliases": ["アガメムノン"], "description": "ミュケーナイの王で、トロイア戦争の総大将。冥府でオデュッセウスと語る。" },
+    { "id": "achilles", "name": "アキレウス", "aliases": ["アキレス"], "description": "トロイア戦争で名を馳せた勇士。冥府でオデュッセウスと語り合う。" }
+  ]
+}

@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "works": [
     { "id": "sample-novel", "title": "サンプル小説", "author": "テスト著者" },
-    { "id": "to-the-lighthouse", "title": "灯台へ", "author": "ヴァージニア・ウルフ" }
+    { "id": "to-the-lighthouse", "title": "灯台へ", "author": "ヴァージニア・ウルフ" },
+    { "id": "odyssey", "title": "オデュッセイア", "author": "ホメロス" }
   ]
 }
